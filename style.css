@@ -1,8 +1,37 @@
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
+  margin: 0;
 }
 
-h1 {
-  color: #333;
+#bannerContainer {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.banner-slide {
+  display: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.banner-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.banner-btn:focus {
+  outline: none;
 }
