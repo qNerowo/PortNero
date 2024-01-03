@@ -6,7 +6,7 @@ body {
 #bannerContainer {
   position: relative;
   width: 100%;
-  max-width: 800px;
+  max-width: 1920px;
   margin: auto;
   overflow: hidden;
 }
@@ -16,7 +16,7 @@ body {
 }
 
 .full-width-image {
-  width: 200%;
+  width: 100%;
   height: auto;
   display: block;
 }
