@@ -5,8 +5,8 @@ body {
 
 #bannerContainer {
   position: relative;
-  width: 150%;
-  max-width: 500px;
+  width: 100%;
+  max-width: 800px;
   margin: auto;
   overflow: hidden;
 }
@@ -16,7 +16,7 @@ body {
 }
 
 img {
-  width: 150%;
+  width: 100%;
   height: auto;
 }
 
