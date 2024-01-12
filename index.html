@@ -7,12 +7,35 @@
     <title>Daniel - Portfolio</title>
     <link rel="icon" type="image/png" href="dev_icon.png">
 
-    <title>Timezone Detection</title>
+      <title>Timezone Detection</title>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      var userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-      alert("Your timezone is: " + userTimeZone);
+      // Check if the timezone is already stored in local storage
+      var userTimeZone = localStorage.getItem('userTimeZone');
+
+      // If not stored, get the timezone and store it
+      if (!userTimeZone) {
+        userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        localStorage.setItem('userTimeZone', userTimeZone);
+      }
+
+      // Display the user's timezone
+      // alert("Your timezone is: " + userTimeZone);
+
+      // Now you can use the user's timezone to determine if it's day or night
+      var currentTimeInUserTimeZone = new Date().toLocaleTimeString('en-US', { timeZone: userTimeZone });
+      var isDaytime = checkIsDaytime(currentTimeInUserTimeZone);
+
+      // alert("It is currently " + (isDaytime ? "daytime" : "nighttime") + " in your timezone.");
     });
+
+    // Function to check if it's daytime
+    function checkIsDaytime(currentTime) {
+      // You can customize this logic based on your definition of daytime
+      // For simplicity, let's assume daytime is from 6 AM to 6 PM
+      var hour = parseInt(currentTime.split(':')[0]);
+      return hour >= 6 && hour < 18;
+    }
   </script>
 
     
@@ -26,6 +49,14 @@
             background-color: #000000;
             background: url('BG.jpg') no-repeat center center fixed;
             background-size: cover;
+        }
+
+        .daytime {
+          background: url('BG.jpg') no-repeat center center fixed;
+        }
+
+        .nighttime {
+          background: "";
         }
 
         header {
@@ -61,6 +92,34 @@
         <p>Web Developer | Programmer</p>
     </header>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var userTimeZone = localStorage.getItem('userTimeZone');
+
+      if (!userTimeZone) {
+        userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        localStorage.setItem('userTimeZone', userTimeZone);
+      }
+
+      var currentTimeInUserTimeZone = new Date().toLocaleTimeString('en-US', { timeZone: userTimeZone });
+      var isDaytime = checkIsDaytime(currentTimeInUserTimeZone);
+
+      var bodyElement = document.body;
+
+      // Apply the appropriate class based on whether it's day or night
+      if (isDaytime) {
+        bodyElement.classList.add('daytime');
+      } else {
+        bodyElement.classList.add('nighttime');
+      }
+    });
+
+    function checkIsDaytime(currentTime) {
+      var hour = parseInt(currentTime.split(':')[0]);
+      return hour >= 6 && hour < 18;
+    }
+  </script>
+    
     <section>
         <h2>About Me</h2>
         <p>Simple & Minimalistic</p>
