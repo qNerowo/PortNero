@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daniel - Portfolio</title>
     <link rel="icon" type="image/png" href="dev_icon.png">
+
+    <title>Timezone Detection</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      alert("Your timezone is: " + userTimeZone);
+    });
+  </script>
+
+    
     <style>
        /* Add your CSS styles here */
         body {
