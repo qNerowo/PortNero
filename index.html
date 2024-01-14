@@ -32,9 +32,9 @@
     // Function to check if it's daytime
     function checkIsDaytime(currentTime) {
       // You can customize this logic based on your definition of daytime
-      // For simplicity, let's assume daytime is from 6 AM to 6 PM
+      // For simplicity, let's assume daytime is from 6 AM to 7 PM
       var hour = parseInt(currentTime.split(':')[0]);
-      return hour >= 6 && hour < 18;
+      return hour >= 6 && hour < 19;
     }
   </script>
 
@@ -87,10 +87,10 @@
 </head>
 
 <body>
-
+ 
     <header>
         <h1>Daniel F.</h1>
-        <p>Web Developer | Programmer</p>
+        <p>| Web Developer | Programmer | Dreamer |</p>
     </header>
 
 <script>
@@ -127,24 +127,28 @@
     </section>
 
     <section>
-        <h2>Portfolio</h2>
+      <div class="portfolio-container">
+        <h2>Portfolio & Projects</h2>
         <!-- Add your portfolio items here -->
         <div class="portfolio-item">
-            <img src="dev_icon.png" alt="Project 1" style="width:50px;height:50px;">
-            <h3><a href="https://winterscpf.carrd.co">Project 01</a></h3>
-            <p>Website using Carrd, to demonstrate how to create a codex for an online gaming community, the infamous "SCP Foundation".</p>
+            <!-- <img src="" alt="Project 2" style="width:50px;height:50px;"> -->
+            <h3><a href="https://winterscpf.carrd.co">Project "SCP:F CODEX"</a></h3>
+            <p>Website using Carrd, to demonstrate how to create a codex/rule set for an online gaming community.</p>
         </div>
 
         <div class="portfolio-item">
-            <img src="dev_icon.png" alt="Project 2" style="width:50px;height:50px;">
-            <h3><a href="">Project 02</a></h3>
-            <p>TBD</p>
+            <!-- <img src="" alt="Project 2" style="width:50px;height:50px;"> -->
+            <h3><a href="https://replit.com/@Theqq/The-Solar-System?v=1">Project "Solar System"</a></h3>
+            <p>The Solar System visualized in a 3D environment, not rightfully scaled, built only to show primary school students a rough initiation as to how our solar system works.</p>
         </div>
+      </div>
     </section>
 
     <section>
         <h2>Scholarity</h2>
-        <p>TBD</p>
+        <p>Completed 9th Grade in the Basic School of Moura, Portugal</p>
+        <p>Frequented 2 years of transition school in Lausanne, Switzerland</p>
+        <p>Currently finishing the last 3 years (10th, 11th, 12th) at the Secondary School of Moura, Portugal</p>
     </section>
 
     <section>
